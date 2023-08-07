@@ -1,1 +1,56 @@
-<h1>It Is Your Birthday, JP</h1>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="js/main.css" />
+	</head>
+	<body class="bg-slate-100">
+		<section class="text-gray-600 body-font">
+			<div
+				class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+				<h1
+					class="title-font sm:text-4xl text-3xl mb-4 font-medium text-indigo-500 text-center font-sans">
+					JP, <span class="strike">it is your birthday.</span> <br />
+					<span id="fade"
+						>Happy Birthday From The NEST Team</span
+					>
+				</h1>
+				<iframe
+					width="560"
+					height="315"
+					class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded"
+					src="https://www.youtube.com/embed/AGtANGhsBoo"
+					title="YouTube video player"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowfullscreen></iframe>
+				<div class="text-center lg:w-2/3 w-full">
+					<p class="mb-8 leading-relaxed text-xl">
+						Happy birthday from all of us! 
+					</p>
+					<div class="flex justify-center">
+						<button
+							class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+							id="test">
+							Celebrate
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+
+	<script src="js/main.js"></script>
+	<script src="js/confetti.min.js"></script>
+	<script>
+		let confetti = new Confetti("test");
+
+		confetti.setCount(150);
+		confetti.setSize(2);
+		confetti.setPower(45);
+		confetti.setFade(false);
+		confetti.destroyTarget(false);
+	</script>
+</html>
