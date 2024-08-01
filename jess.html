@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="js/main.css" />
+	</head>
+	<body class="bg-slate-100">
+		<section class="text-gray-600 body-font">
+			<div
+				class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+				<h1
+					class="title-font sm:text-4xl text-3xl mb-4 font-medium text-indigo-500 text-center font-sans">
+					Jess, <span class="strike">it is your birthday.</span> <br />
+					<span id="fade"
+						>Happy Birthday from Maria and I!!!</span
+					>
+				</h1>
+				<div class="text-center lg:w-2/3 w-full">
+					<p class="mb-8 leading-relaxed text-xl">
+						Happy birthday from us + Kona! Francis (and both other boys) better spoil you today, or Kona will eat his leg! We love you lots, excited for drinks later!!
+					</p>
+					<div class="flex justify-center">
+						<button
+							class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+							id="test">
+							Celebrate
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+
+	<script src="js/main.js"></script>
+	<script src="js/confetti.min.js"></script>
+	<script>
+		let confetti = new Confetti("test");
+
+		confetti.setCount(150);
+		confetti.setSize(2);
+		confetti.setPower(45);
+		confetti.setFade(false);
+		confetti.destroyTarget(false);
+
+        var path = window.location.pathname;
+        var page = path.split("/").pop();
+        console.log( page );
+	</script>
+</html>
