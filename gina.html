@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Celebrating Gina</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffe6f0;
+      overflow: hidden;
+      height: 100vh;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    h1 {
+      color: #d72660;
+      margin-top: 60px;
+      font-size: 3em;
+      text-shadow: 2px 2px 8px #fff;
+      z-index: 2;
+    }
+    .subtitle {
+      color: #a8325a;
+      font-size: 1.5em;
+      margin-bottom: 40px;
+      z-index: 2;
+    }
+    .heart {
+      position: fixed;
+      top: -50px;
+      font-size: 2em;
+      color: #d72660;
+      pointer-events: none;
+      animation: fall linear;
+      z-index: 1;
+      opacity: 0.85;
+      filter: drop-shadow(0 2px 4px #d7266066);
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.7;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>We Love You, Gina! 💖</h1>
+  <div class="subtitle">Celebrating your kindness, joy, and sparkle!</div>
+  <script>
+    function randomBetween(a, b) {
+      return a + Math.random() * (b - a);
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤';
+      const size = randomBetween(18, 48);
+      heart.style.left = randomBetween(0, 100) + 'vw';
+      heart.style.fontSize = size + 'px';
+      heart.style.animationDuration = randomBetween(3, 7) + 's';
+      heart.style.opacity = randomBetween(0.7, 1);
+      document.body.appendChild(heart);
+
+      heart.addEventListener('animationend', () => {
+        heart.remove();
+      });
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
